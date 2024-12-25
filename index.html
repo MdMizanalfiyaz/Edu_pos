@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link rel="stylesheet" href="./src/output.css" />
+  </head>
+  <body>
+    <div class="flex">
+      <!-- sidebar  -->
+      <div
+        class="flex flex-col justify-between bg-darkBlue w-full max-w-[300px] min-h-screen"
+      >
+        <div>
+          <div class="text-center py-8 overflow-y-auto">
+            <span
+              class="block uppercase text-lg text-yellow-500 font-semibold w-full"
+              >Cursor Edumate</span
+            >
+            <span class="block capitalize text-sm text-slate-300 w-full"
+              >Student management solution</span
+            >
+          </div>
+
+          <div class="py-2 overflow-y-auto">
+            <ul class="list-none space-y-1 font-medium">
+              <li>
+                <a
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group hover:text-yellow-400"
+                  href=""
+                  ><img
+                    src="./img/dashboard.png"
+                    alt=""
+                    class="w-5 h-5 text-white transition duration-75 dark:text-gray-500 group-hover:text-yellow-500 dark:group-hover:text-gray-500"
+                  /><span class="ms-3">Dashborad</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group hover:text-yellow-400"
+                  href=""
+                  ><img
+                    src="./img/school.png"
+                    alt=""
+                    class="w-5 h-5 text-white transition duration-75 dark:text-gray-500 group-hover:text-yellow-500 dark:group-hover:text-gray-500"
+                  /><span class="ms-3">Teacher</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group hover:text-yellow-400"
+                  href=""
+                  ><img
+                    src="./img/reading (1).png"
+                    alt=""
+                    class="w-5 h-5 text-white transition duration-75 dark:text-gray-500 group-hover:text-yellow-500 dark:group-hover:text-gray-500"
+                  /><span class="ms-3">Student</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group hover:text-yellow-400"
+                  href=""
+                  ><img
+                    src="./img/man.png"
+                    alt=""
+                    class="w-5 h-5 text-white transition duration-75 dark:text-gray-500 group-hover:text-yellow-500 dark:group-hover:text-gray-500"
+                  /><span class="ms-3">Exam</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group hover:text-yellow-400"
+                  href=""
+                  ><img
+                    src="https://cdn-icons-png.flaticon.com/128/3504/3504004.png"
+                    alt=""
+                    class="w-5 h-5 text-white transition duration-75 dark:text-gray-500 group-hover:text-yellow-500 dark:group-hover:text-gray-500"
+                  /><span class="ms-3">Reports</span></a
+                >
+              </li>
+              <li>
+                <a
+                  class="flex items-center p-2 text-white rounded-lg dark:text-white hover:bg-gray-700 dark:hover:bg-gray-700 group hover:text-yellow-400"
+                  href=""
+                  ><img
+                    src="./img/settings.png"
+                    alt=""
+                    class="w-5 h-5 text-white transition duration-75 dark:text-gray-500 group-hover:text-yellow-500 dark:group-hover:text-gray-500"
+                  /><span class="ms-3">Settings</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center text-sm">
+          © 2024 Corsor Ltd..All Right Reserved
+        </div>
+      </div>
+
+      <div class="flex flex-col grow">
+        <div class="bg-white py-4 px-4 flex items-center justify-between">
+          <!--  -->
+          <div
+            class="flex border border-pink-500 bg-slate-200 px-2 py-1 rounded-lg"
+            style="width: fit-content"
+          >
+            <i class="ri-search-line text-xl"></i>
+            <input
+              type="search"
+              class="search-box focus:outline-none px-2 bg-slate-200 text-gray-600 outline-none"
+              placeholder="Search here..."
+            />
+            <button class="bg-white px-1 rounded-lg">
+              <i class="ri-command-line"></i>
+              K
+            </button>
+          </div>
+          <!--  -->
+
+          <div class="flex gap-6 items-center">
+            <img src="./img/office.png" class="w-8" alt="" />
+            <img src="./img/cubes.png" class="w-8" alt="" />
+            <img src="./img/translating.png" class="w-8" alt="" />
+            <span class="font-semibold text-xl">EN</span>
+            <div class="ring-2 rounded-full ring-pink-500">
+              <img
+                class="w-10 rounded-full"
+                src="data:image/png;base64,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"
+                alt=""
+              />
+            </div>
+            <div class="">
+              <span class="bolck font-semibold text-lg">Lorem</span>
+              <span class="block text-sm">Adminstator</span>
+            </div>
+            <i class="ri-arrow-drop-down-line text-2xl font-semibold"></i>
+          </div>
+        </div>
+        <div class="bg-ulbgWhite h-full">
+          <div class="wide-span py-4">
+            <div class="flex justify-between border border-t-0 border-l-0 border-r-0 border-b-black">
+              <div class="text-lg text-black font-semibold">Shonkar Educare Institute</div>
+              <div class="flex gap-4 mb-1.5">
+                <span class="">Date</span
+                ><input
+                  type="date"
+                  class="search-box px-2 font-sans bg-ulbgWhite border border-black"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-5 gap-5 py-2">
+              <div class="border flex border-black items-center bg-tail">
+                <img src="./img/reading.png" alt="" class="w8 h-8" />
+                <div class="">
+                  <div class="">Total Student</div>
+                  <div class="">1200</div>
+                </div>
+              </div>
+              <div class="border flex border-black items-center bg-pupink">
+                <img src="./img/reading.png" alt="" class="w-8 h-8" />
+                <div class="">
+                  <div class="">Total Student</div>
+                  <div class="">1200</div>
+                </div>
+              </div>
+              <div class="border flex border-black items-center bg-cream">
+                <img src="./img/reading.png" alt="" class="w-8 h-8" />
+                <div class="">
+                  <div class="">Total Student</div>
+                  <div class="">1200</div>
+                </div>
+              </div>
+              <div class="border flex border-black items-center bg-uBlue">
+                <img src="./img/reading.png" alt="" class="w-8 h-8" />
+                <div class="">
+                  <div class="">Total Student</div>
+                  <div class="">1200</div>
+                </div>
+              </div>
+              <div class="border flex border-black items-center bg-ulGreen">
+                <img src="./img/reading.png" alt="" class="w-8 h-8" />
+                <div class="">
+                  <div class="">Total Student</div>
+                  <div class="">1200</div>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-3 gap-5">
+              <canvas id="pieChart1" width="250" height="250"></canvas>
+              <canvas id="pieChart2" width="250" height="250"></canvas>
+              <canvas id="pieChart3" width="250" height="250"></canvas>
+                       
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<script>
+  function createPieChart(canvasId, chartData) {
+    // Get the canvas element
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    
+    // Options for the chart
+    const options = {
+      plugins: {
+        tooltip: {
+          enabled: true, // Tooltip on hover
+        },
+        legend: {
+          display: true, // Show legend
+          position: 'top',
+        },
+        datalabels: {
+          formatter: (value, context) => {
+            // Calculate percentage
+            let sum = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+            let percentage = ((value / sum) * 100).toFixed(1) + '%';
+            return percentage;
+          },
+          color: '#fff',
+          font: {
+            weight: 'bold',
+          },
+        },
+      },
+    };
+
+    // Create the pie chart
+    new Chart(ctx, {
+      type: 'pie',
+      data: chartData,
+      options: options,
+    });
+  }
+
+  // Data for each chart
+  const data1 = {
+    labels: ['Red', 'Blue', 'Yellow', 'Green'],
+    datasets: [
+      {
+        data: [300, 50, 100, 150],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50'],
+      },
+    ],
+  };
+
+  const data2 = {
+    labels: ['Apple', 'Orange', 'Banana', 'Grapes'],
+    datasets: [
+      {
+        data: [200, 150, 100, 250],
+        backgroundColor: ['#FF6384', '#FFA500', '#FFFF00', '#8E44AD'],
+      },
+    ],
+  };
+
+  const data3 = {
+    labels: ['Math', 'Science', 'History', 'Art'],
+    datasets: [
+      {
+        data: [400, 300, 200, 100],
+        backgroundColor: ['#2ECC71', '#3498DB', '#E74C3C', '#F1C40F'],
+      },
+    ],
+  };
+
+  // Include the datalabels plugin
+  Chart.register(ChartDataLabels);
+
+  // Create pie charts
+  createPieChart('pieChart1', data1);
+  createPieChart('pieChart2', data2);
+  createPieChart('pieChart3', data3);
+</script>
+    
+
+    
+    
+    
+
+  </body>
+</html>
