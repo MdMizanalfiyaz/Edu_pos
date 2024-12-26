@@ -196,9 +196,9 @@
               </div>
             </div>
             <div class="grid grid-cols-3 gap-5">
-              <canvas id="pieChart1" width="250" height="250"></canvas>
-              <canvas id="pieChart2" width="250" height="250"></canvas>
-              <canvas id="pieChart3" width="250" height="250"></canvas>
+              <canvas id="pieChart1" ></canvas>
+              <canvas id="pieChart2" ></canvas>
+              <canvas id="pieChart3" ></canvas>
                        
             </div>
           </div>
@@ -207,86 +207,83 @@
     </div>
 
 
-<script>
-  function createPieChart(canvasId, chartData) {
-    // Get the canvas element
-    const ctx = document.getElementById(canvasId).getContext('2d');
-    
-    // Options for the chart
-    const options = {
-      plugins: {
-        tooltip: {
-          enabled: true, // Tooltip on hover
-        },
-        legend: {
-          display: true, // Show legend
-          position: 'top',
-        },
-        datalabels: {
-          formatter: (value, context) => {
-            // Calculate percentage
-            let sum = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-            let percentage = ((value / sum) * 100).toFixed(1) + '%';
-            return percentage;
+    <script>
+      function createPieChart(canvasId, chartData) {
+        // Get the canvas element
+        const ctx = document.getElementById(canvasId).getContext('2d');
+  
+        // Options for the chart
+        const options = {
+          plugins: {
+            tooltip: {
+              enabled: true, // Tooltip on hover
+            },
+            legend: {
+              display: true, // Show legend
+              position: 'top',
+            },
+            datalabels: {
+              formatter: (value, context) => {
+                // Calculate percentage
+                let sum = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                let percentage = ((value / sum) * 100).toFixed(1) + '%';
+                return percentage;
+              },
+              color: '#fff',
+              font: {
+                weight: 'bold',
+              },
+            },
           },
-          color: '#fff',
-          font: {
-            weight: 'bold',
+        };
+  
+        // Create the pie chart
+        new Chart(ctx, {
+          type: 'pie',
+          data: chartData,
+          options: options,
+        });
+      }
+  
+      // Data for each chart
+      const data1 = {
+        labels: ['Red', 'Blue', 'Yellow', 'Green'],
+        datasets: [
+          {
+            data: [300, 50, 100, 150],
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50'],
           },
-        },
-      },
-    };
-
-    // Create the pie chart
-    new Chart(ctx, {
-      type: 'pie',
-      data: chartData,
-      options: options,
-    });
-  }
-
-  // Data for each chart
-  const data1 = {
-    labels: ['Red', 'Blue', 'Yellow', 'Green'],
-    datasets: [
-      {
-        data: [300, 50, 100, 150],
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50'],
-      },
-    ],
-  };
-
-  const data2 = {
-    labels: ['Apple', 'Orange', 'Banana', 'Grapes'],
-    datasets: [
-      {
-        data: [200, 150, 100, 250],
-        backgroundColor: ['#FF6384', '#FFA500', '#FFFF00', '#8E44AD'],
-      },
-    ],
-  };
-
-  const data3 = {
-    labels: ['Math', 'Science', 'History', 'Art'],
-    datasets: [
-      {
-        data: [400, 300, 200, 100],
-        backgroundColor: ['#2ECC71', '#3498DB', '#E74C3C', '#F1C40F'],
-      },
-    ],
-  };
-
-  // Include the datalabels plugin
-  Chart.register(ChartDataLabels);
-
-  // Create pie charts
-  createPieChart('pieChart1', data1);
-  createPieChart('pieChart2', data2);
-  createPieChart('pieChart3', data3);
-</script>
-    
-
-    
+        ],
+      };
+  
+      const data2 = {
+        labels: ['Apple', 'Orange', 'Banana', 'Grapes'],
+        datasets: [
+          {
+            data: [200, 150, 100, 250],
+            backgroundColor: ['#FF6384', '#FFA500', '#FFFF00', '#8E44AD'],
+          },
+        ],
+      };
+  
+      const data3 = {
+        labels: ['Math', 'Science', 'History', 'Art'],
+        datasets: [
+          {
+            data: [400, 300, 200, 100],
+            backgroundColor: ['#2ECC71', '#3498DB', '#E74C3C', '#F1C40F'],
+          },
+        ],
+      };
+  
+      // Include the datalabels plugin
+      Chart.register(ChartDataLabels);
+  
+      // Create pie charts
+      createPieChart('pieChart1', data1);
+      createPieChart('pieChart2', data2);
+      createPieChart('pieChart3', data3);
+    </script> 
     
     
 
