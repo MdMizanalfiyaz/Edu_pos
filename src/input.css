@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+
+}
+
+
+.search-box{
+    outline: none;
+}
+
+
+.wide-span{
+    width: calc(100% - 10%);
+    margin: 0 auto;
+}
