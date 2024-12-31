@@ -188,7 +188,7 @@
                 </div>
               </div>
               <div class="border flex border-black justify-evenly items-center bg-ulGreen">
-                <img src="./img/reading.png" alt="" class="w-8 h-8" />
+                <img src="./img/shift.png" alt="" class="w-8 h-8" />
                 <div class="">
                   <div class="">Total Shift</div>
                   <div class="text-2xl font-bold">3</div>
@@ -203,9 +203,9 @@
               </div>
             
               <!-- Chart 2 -->
-              <div class="flex flex-col  bg-white h-60">
+              <div class="flex flex-col bg-white h-60">
                 <div class="text-center font-semibold border-b-2">Attendance stat</div>
-                  <canvas id="pieChart2" class="w-28 h-24"></canvas>
+                <canvas id="pieChart2" class="w-28 h-24"></canvas>
                 
               </div>
             
@@ -323,16 +323,16 @@ const options = {
    
     <style>
       #pieChart1, #pieChart2, #pieChart3 {
-        width: 30px; /* Reduce width */
-        height: 30px; /* Reduce height */
+        width: 20px; /* Reduce width */
+        height: 20px; /* Reduce height */
       }
     </style>
 
 
 <script>
-  var xValues = ["Italy", "France", "Spain", "USA", "Argentina", "Iran", "Afghanistan", "brown", "yellow", "purple"];
-  var yValues = [55, 49, 44, 24, 15, 55, 49, 21,12,13,24];
-  var barColors = ["red", "green", "blue", "orange", "brown", "yellow", "purple"];
+  var xValues = ["01.11.24", "02.11.24", "03.11.24", "04.11.24", "05.11.24", "06.11.24", "07.11.24", "08.11.24", "09.11.24", "10.11.24","11.11.24","12.11.24","13.11.24","14.11.24"];
+  var yValues = [55, 49, 44, 24, 15, 55, 49, 21,12,13,24,15,17,13];
+  var barColors = ["#a27dfe"];
 
   new Chart("myChart", {
     type: "bar",
@@ -342,7 +342,7 @@ const options = {
         label: "", // Prevents undefined label
         backgroundColor: barColors,
         data: yValues,
-        barThickness: 35, // Sets the bar width (adjust as needed)
+        barThickness: 55, // Sets the bar width (adjust as needed)
         borderRadius: 5,
       }]
     },
@@ -373,7 +373,7 @@ const options = {
             display: false // Disable horizontal grid lines
           },
           ticks: {
-            beginAtZero: true // Ensure y-axis starts at 0
+            beginAtZero: false // Ensure y-axis starts at 0
           }
         }
       },
