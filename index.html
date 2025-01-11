@@ -327,70 +327,60 @@ const options = {
       }
     </style>
 
-
 <script>
-  var xValues = ["01.11.24", "02.11.24", "03.11.24", "04.11.24", "05.11.24", "06.11.24", "07.11.24", "08.11.24", "09.11.24", "10.11.24","11.11.24","12.11.24","13.11.24","14.11.24"];
-  var yValues = [55, 49, 44, 24, 15, 55, 49, 21,12,13,24,15,17,13];
-  var barColors = ["#a27dfe"];
 
-  new Chart("myChart", {
-    type: "bar",
-    data: {
-      labels: xValues,
-      datasets: [{
-        label: "", // Prevents undefined label
-        backgroundColor: barColors,
-        data: yValues,
-        barThickness: 55, // Sets the bar width (adjust as needed)
+
+const ctx = document.getElementById('myChart').getContext('2d');
+
+const data = {
+    labels: ['01.11.24', '02.11.24', '03.11.24', '04.11.24', '05.11.24', '06.11.24', '07.11.24', '08.11.24', '09.11.24', '10.11.24', '11.11.24', '12.11.24', '13.11.24', '14.11.24', '15.11.24'],
+    datasets: [{
+        label: 'Data', // You can remove this if you don't need a legend
+        data: [80, 40, 60, 20, 70, 90, 60, 50, 5, 85, 60, 75, 35, 0, 95], // Replace with your actual data
+        backgroundColor: 'rgb(162, 125, 254)', // Purple color
+        barThickness: 30, // Adjust bar thickness as needed
         borderRadius: 5,
-      }]
-    },
+    }]
+};
+
+const config = {
+    type: 'bar',
+    data: data,
     options: {
-      plugins: {
-
-        
-
-        legend: {
-          display: false // Hides the legend
+        responsive: true,
+        scales: {
+            x: {
+                grid: {
+                    display: false // Hide x-axis gridlines
+                },
+                ticks: {
+                    autoSkip: false, // Prevent label skipping
+                    //maxRotation: 45, // Rotate labels if they overlap
+                    //minRotation: 45
+                }
+            },
+            y: {
+                beginAtZero: true,
+                max: 100, // Set maximum y-axis value (adjust if needed)
+                grid: {
+                    display: false // Hide y-axis gridlines
+                },
+                ticks:{
+                  display: false
+                }
+            }
         },
-        title: {
-          display: false,
-          text: "World Wine Production 2018"
-        },
-        datalabels: {
-          display: false // Prevents data labels from being shown (if plugin is used)
-        },
-      },
-      scales: {
-        x: {
-          grid: {
-            display: false // Disable vertical grid lines
-          },
-          ticks:{
-            beginAtZero: false
-          }
-        },
-        y: {
-          grid: {
-            display: false // Disable horizontal grid lines
-          },
-          ticks: {
-            beginAtZero: false // Ensure y-axis starts at 0
-          }
+        plugins: {
+            legend: {
+                display: false // Hide the legend
+            }
         }
-      },
-
-      
-
-      maintainAspectRatio: false, // Allows custom sizing
-      aspectRatio: 2 // Custom width-to-height ratio
     }
-  });
-  //end of bar charts
+};
+
+new Chart(ctx, config);
+
 </script>
-
-
-    
     
     
 
